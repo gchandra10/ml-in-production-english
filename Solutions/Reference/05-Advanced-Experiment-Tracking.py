@@ -7,7 +7,8 @@
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="4b6ee6d2-5ae5-4a95-bd96-ce6f3a1022ab"/>
+# DBTITLE 0,--i18n-4b6ee6d2-5ae5-4a95-bd96-ce6f3a1022ab
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -24,36 +25,12 @@
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="b9f1a52f-9e49-4efa-9d7c-23e6f524f079"/>
-# MAGIC 
-# MAGIC 
-# MAGIC 
-# MAGIC ### Signatures and Input Examples
-# MAGIC 
-# MAGIC Previously, when logging a model in MLflow we only logged the model and name for the model artifact with **`.log_model(model, model_name)`**
-# MAGIC 
-# MAGIC However, it is a best practice to also log a model signature and input example. This allows for better schema checks and, therefore, integration with automated deployment tools.
-# MAGIC 
-# MAGIC **Signature**
-# MAGIC * A model signature is just the schema of the input(s) and the output(s) of the model
-# MAGIC * We usually get this with the **`infer_schema`** function
-# MAGIC 
-# MAGIC **Input Example**
-# MAGIC * This is simply a few example inputs to the model 
-# MAGIC * This will be converted to JSON and stored in our MLflow run
-# MAGIC * It integrates well with MLflow model serving
-# MAGIC 
-# MAGIC In general, logging a model with these looks like **`.log_model(model, model_name, signature=signature, input_example=input_example)`**.
-# MAGIC 
-# MAGIC Let's look at an example, where we create a **`sklearn`** Random Forest Regressor model and log it with the signature and input example.
-
-# COMMAND ----------
-
 # MAGIC %run "../Includes/Classroom-Setup"
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="f3575bef-8818-418a-a47b-d010dda8ff33"/>
+# DBTITLE 0,--i18n-f3575bef-8818-418a-a47b-d010dda8ff33
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -69,7 +46,8 @@ X_train, X_test, y_train, y_test = train_test_split(df.drop(["price"], axis=1), 
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="4f202196-a36e-4ea0-83f0-d173452281c5"/>
+# DBTITLE 0,--i18n-4f202196-a36e-4ea0-83f0-d173452281c5
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -95,17 +73,8 @@ with mlflow.start_run(run_name="Signature Example") as run:
 
 # COMMAND ----------
 
-# MAGIC %md-sandbox <i18n value="e9353a0e-59d4-4913-93f6-20ddb1a3bbcb"/>
-# MAGIC 
-# MAGIC 
-# MAGIC 
-# MAGIC Look at the MLflow UI for this run to see our model signature and input example
-# MAGIC 
-# MAGIC <img style="width:50%" src="https://files.training.databricks.com/images/mlpupdates/signature_example.gif" >
-
-# COMMAND ----------
-
-# MAGIC %md <i18n value="5b4669a8-168a-43e5-be30-ec45e83c75f8"/>
+# DBTITLE 0,--i18n-5b4669a8-168a-43e5-be30-ec45e83c75f8
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -130,7 +99,8 @@ with mlflow.start_run(run_name="Nested Example") as run:
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="1357e920-239c-4e96-8163-af4b95b6e7cc"/>
+# DBTITLE 0,--i18n-1357e920-239c-4e96-8163-af4b95b6e7cc
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -138,7 +108,8 @@ with mlflow.start_run(run_name="Nested Example") as run:
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="a6f66d2b-3b27-408a-beb7-71e107fd31a6"/>
+# DBTITLE 0,--i18n-a6f66d2b-3b27-408a-beb7-71e107fd31a6
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -169,7 +140,8 @@ rf_model = rf.fit(X_train, y_train)
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="c0771669-fd4f-4158-a710-48b2c41ed88c"/>
+# DBTITLE 0,--i18n-c0771669-fd4f-4158-a710-48b2c41ed88c
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -177,7 +149,8 @@ rf_model = rf.fit(X_train, y_train)
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="aa9b9ec6-9df3-4c2d-8b0b-6b08d3bea7b0"/>
+# DBTITLE 0,--i18n-aa9b9ec6-9df3-4c2d-8b0b-6b08d3bea7b0
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -196,7 +169,8 @@ rf_model = rf.fit(X_train, y_train)
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="58aed944-4244-45b5-b982-4a113c325ae7"/>
+# DBTITLE 0,--i18n-58aed944-4244-45b5-b982-4a113c325ae7
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -225,7 +199,8 @@ def objective(params):
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="7a7dcc3d-3def-43a8-9042-afe826d8804a"/>
+# DBTITLE 0,--i18n-7a7dcc3d-3def-43a8-9042-afe826d8804a
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -255,7 +230,8 @@ with mlflow.start_run(run_name="Hyperopt"):
 
 # COMMAND ----------
 
-# MAGIC %md-sandbox <i18n value="9a09a629-3545-4f60-942e-7a0468c9b54d"/>
+# DBTITLE 0,--i18n-9a09a629-3545-4f60-942e-7a0468c9b54d
+# MAGIC %md-sandbox
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -273,7 +249,8 @@ with mlflow.start_run(run_name="Hyperopt"):
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="662b39d5-4255-4d8a-9930-024a9a79eccd"/>
+# DBTITLE 0,--i18n-662b39d5-4255-4d8a-9930-024a9a79eccd
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -284,6 +261,8 @@ with mlflow.start_run(run_name="Hyperopt"):
 # MAGIC We will now look at: 
 # MAGIC * <a href="https://www.mlflow.org/docs/latest/python_api/mlflow.shap.html#mlflow.shap" target="_blank">mlflow.shap</a>: Automatically calculates and logs Shapley feature importance plots
 # MAGIC * <a href="https://mlflow.org/docs/latest/python_api/mlflow.html#mlflow.log_figure" target="_blank">mlflow.log_figure</a>: Logs matplotlib and plotly plots
+# MAGIC 
+# MAGIC Take a look at the MLflow UI after you run this cell.
 
 # COMMAND ----------
 
@@ -305,17 +284,8 @@ with mlflow.start_run(run_name="Feature Importance Scores"):
 
 # COMMAND ----------
 
-# MAGIC %md-sandbox <i18n value="e112af2e-b3ea-4855-ae09-91aad0db27c0"/>
-# MAGIC 
-# MAGIC 
-# MAGIC 
-# MAGIC Look at this in the MLflow UI
-# MAGIC 
-# MAGIC <img style="width:50%" src="https://files.training.databricks.com/images/mlpupdates/artifact_examples.gif" >
-
-# COMMAND ----------
-
-# MAGIC %md <i18n value="a2c7fb12-fd0b-493f-be4f-793d0a61695b"/>
+# DBTITLE 0,--i18n-a2c7fb12-fd0b-493f-be4f-793d0a61695b
+# MAGIC %md
 # MAGIC 
 # MAGIC ## Classroom Cleanup
 # MAGIC 
@@ -327,7 +297,8 @@ DA.cleanup()
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="4eec3fff-d56d-40cf-85b9-6c82297de99d"/>
+# DBTITLE 0,--i18n-4eec3fff-d56d-40cf-85b9-6c82297de99d
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 

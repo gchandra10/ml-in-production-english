@@ -7,7 +7,8 @@
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="5e632009-09f2-491e-89c3-565320d463c8"/>
+# DBTITLE 0,--i18n-5e632009-09f2-491e-89c3-565320d463c8
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -29,7 +30,8 @@
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="e8d91a25-55ce-47ee-a353-c53ae793e917"/>
+# DBTITLE 0,--i18n-e8d91a25-55ce-47ee-a353-c53ae793e917
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -51,7 +53,8 @@
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="76d7a403-2d43-425f-ba56-b45e3c1667a4"/>
+# DBTITLE 0,--i18n-76d7a403-2d43-425f-ba56-b45e3c1667a4
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -60,7 +63,7 @@
 # MAGIC * Many use REST
 # MAGIC * For basic prototypes, MLflow can act as a development deployment server
 # MAGIC   - The MLflow implementation is backed by the Python library Flask
-# MAGIC   - *This is not intended to for production environments*
+# MAGIC   - *This is not intended for production environments*
 # MAGIC 
 # MAGIC In addition, Databricks offers a managed **MLflow Model Serving** solution. This solution allows you to host machine learning models from Model Registry as REST endpoints that are automatically updated based on the availability of model versions and their stages.
 # MAGIC 
@@ -81,7 +84,8 @@
 
 # COMMAND ----------
 
-# MAGIC %md-sandbox <i18n value="94daca86-99a3-4ba1-81d2-7978ef10b940"/>
+# DBTITLE 0,--i18n-94daca86-99a3-4ba1-81d2-7978ef10b940
+# MAGIC %md-sandbox
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -112,7 +116,8 @@ with mlflow.start_run() as run:
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="f1474008-3f65-4d83-829b-802344f0450b"/>
+# DBTITLE 0,--i18n-f1474008-3f65-4d83-829b-802344f0450b
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -128,7 +133,8 @@ with mlflow.start_run() as run:
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="cbe5b173-2e3c-4297-b3b9-0ce3955d1f75"/>
+# DBTITLE 0,--i18n-cbe5b173-2e3c-4297-b3b9-0ce3955d1f75
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -160,11 +166,12 @@ def run_server():
 p = Process(target=run_server) # Create a background process
 p.start()                      # Start the process
 time.sleep(5)                  # Give it 5 seconds to startup
-print(p)                       # Print it's status, make sure it's runnning
+print(p)                       # Print its status to ensure it's runnning
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="07ba25b5-7a4b-4215-b084-e0e0549da8bb"/>
+# DBTITLE 0,--i18n-07ba25b5-7a4b-4215-b084-e0e0549da8bb
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -172,16 +179,16 @@ print(p)                       # Print it's status, make sure it's runnning
 
 # COMMAND ----------
 
-import pandas as pd
+import json
 
-input_df = pd.DataFrame([0])
-input_json = input_df.to_json(orient="split")
-
+input_json0 = {"dataframe_split": {"index":[0], "columns":[0], "data":[[0]]}}
+input_json = json.dumps(input_json0)
 input_json
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="ba22cdd2-2b75-4c5d-9e11-45d89b865dbd"/>
+# DBTITLE 0,--i18n-ba22cdd2-2b75-4c5d-9e11-45d89b865dbd
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -208,7 +215,8 @@ print(f"Value:  {response.text}")
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="fc8c9431-22b7-4d0d-adae-986db149f3df"/>
+# DBTITLE 0,--i18n-fc8c9431-22b7-4d0d-adae-986db149f3df
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -216,11 +224,12 @@ print(f"Value:  {response.text}")
 
 # COMMAND ----------
 
-# MAGIC %sh (echo -n '{"columns":[0],"index":[0],"data":[[0]]}') | curl -H "Content-Type: application/json" -d @- http://127.0.0.1:6501/invocations
+# MAGIC %sh (echo -n '{"dataframe_split": {"index": [0], "columns": [0], "data": [[0]]}}') | curl -H "Content-Type: application/json" -d @- http://127.0.0.1:6501/invocations
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="f2903c45-3615-41c4-97c3-9d402399f04f"/>
+# DBTITLE 0,--i18n-f2903c45-3615-41c4-97c3-9d402399f04f
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -232,7 +241,8 @@ p.terminate()
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="63f1e88a-69d1-4ee4-8ecb-b760a4d11168"/>
+# DBTITLE 0,--i18n-63f1e88a-69d1-4ee4-8ecb-b760a4d11168
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -245,7 +255,8 @@ p.terminate()
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="af365e9e-4c75-43b1-9fe7-2aa1fc8b7343"/>
+# DBTITLE 0,--i18n-af365e9e-4c75-43b1-9fe7-2aa1fc8b7343
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -253,14 +264,12 @@ p.terminate()
 
 # COMMAND ----------
 
-import mlflow
 import mlflow.sklearn
-import pandas as pd
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.model_selection import train_test_split
 from mlflow.models.signature import infer_signature
 
-suffix=DA.unique_name("-")
+suffix = DA.unique_name("-")
 model_name = f"demo-model_{suffix}"
 
 df = pd.read_parquet(f"{DA.paths.datasets_path}/airbnb/sf-listings/airbnb-cleaned-mlflow.parquet")
@@ -278,16 +287,17 @@ with mlflow.start_run(run_name="RF Model") as run:
                              input_example=input_example, 
                              signature=signature, 
                              registered_model_name=model_name, 
-                             extra_pip_requirements=["mlflow==1.*"]
+                             extra_pip_requirements=["mlflow==2.*"]
                             )
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="eb94b91f-df88-4483-8321-75a319841713"/>
+# DBTITLE 0,--i18n-eb94b91f-df88-4483-8321-75a319841713
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
-# MAGIC Step 2: Run Tests Against Registered Model in order to Promote To Staging
+# MAGIC Step 2: Run Tests Against Registered Model
 
 # COMMAND ----------
 
@@ -300,83 +310,142 @@ model_version_1 = mlflow.pyfunc.load_model(model_version_uri)
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="ac061551-c8bc-4f4e-b811-6ddb970ab1b6"/>
+# DBTITLE 0,--i18n-ac061551-c8bc-4f4e-b811-6ddb970ab1b6
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
-# MAGIC Here, visit the MLflow Model Registry to enable Model Serving. 
+# MAGIC Enable model inference via API call:
 # MAGIC 
-# MAGIC <img src="http://files.training.databricks.com/images/mlflow/demo_model_register.png" width="600" height="20"/>
+# MAGIC After calling `log_model`, a new version of the model is saved. To provision a serving endpoint, follow the steps below.
+# MAGIC 
+# MAGIC 1. Click **Serving** in the left sidebar. If you don't see it, switch to the Machine Learning Persona ([AWS](https://docs.databricks.com/workspace/index.html#use-the-sidebar)|[Azure](https://docs.microsoft.com/azure/databricks//workspace/index#use-the-sidebar)).
+# MAGIC 2. Enable serving for your model. See the Databricks documentation for details ([AWS](https://docs.databricks.com/machine-learning/model-inference/serverless/create-manage-serverless-endpoints.html)|[Azure](https://learn.microsoft.com/en-us/azure/databricks/machine-learning/model-inference/serverless/create-manage-serverless-endpoints)).
+# MAGIC 
+# MAGIC The code below automatically creates a model serving endpoint for you.
 
 # COMMAND ----------
 
-import mlflow 
-# We need both a token for the API, which we can get from the notebook.
-# Recall that we discuss the method below to retrieve tokens is not the best practice. We recommend you create your personal access token and save it in a secret scope. 
-token = mlflow.utils.databricks_utils._get_command_context().apiToken().get()
+from mlflow.tracking.client import MlflowClient
+
+model_serving_endpoint_name = "endpoint-" + model_name 
+token = dbutils.notebook.entry_point.getDbutils().notebook().getContext().apiToken().getOrElse(None) # provide both a token for the API, which can be obtained from the notebook.
 
 # With the token, we can create our authorization header for our subsequent REST calls
-headers = {"Authorization": f"Bearer {token}"}
+headers = {
+    "Authorization": f"Bearer {token}",
+    "Content-Type": "application/json"
+}
 
-# Next we need an endpoint at which to execute our request which we can get from the Notebook's context
-api_url = mlflow.utils.databricks_utils.get_webapp_url()
-print(api_url)
+instance = spark.conf.get("spark.databricks.workspaceUrl")
+endpoint_url = f"https://{instance}/api/2.0/serving-endpoints"
 
-# COMMAND ----------
-
-# MAGIC %md <i18n value="5e89ca75-0717-49f9-83fa-e0b1f18b89f7"/>
-# MAGIC 
-# MAGIC 
-# MAGIC 
-# MAGIC Enable the endpoint
-
-# COMMAND ----------
-
-import requests
-
-url = f"{api_url}/api/2.0/mlflow/endpoints/enable"
-
-r = requests.post(url, headers=headers, json={"registered_model_name": model_name})
-assert r.status_code == 200, f"Expected an HTTP 200 response, received {r.status_code}"
+def get_latest_model_version(model_name: str):
+    client = MlflowClient()
+    models = client.get_latest_versions(model_name, stages=["None"])
+    for m in models:
+        new_model_version = m.version
+    return new_model_version
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="5890c1e6-9b36-4284-9ac2-3945c1c19886"/>
+# DBTITLE 0,--i18n-5e89ca75-0717-49f9-83fa-e0b1f18b89f7
+# MAGIC %md
 # MAGIC 
-# MAGIC It will take a couple of minutes for the endpoint and model to become ready.
+# MAGIC Set up configurations for Serverless model serving endpoint:
+# MAGIC * Create the serving endpooint if it does not exist yet
+# MAGIC * Or update the configuration of the model serving endpoint if it already exists
+
+# COMMAND ----------
+
+my_json = {
+    "name": model_serving_endpoint_name,
+    "config": {
+        "served_models": [{"model_name": model_name,
+                           "model_version": get_latest_model_version(model_name=model_name),
+                           "workload_size": "Small",
+                           "scale_to_zero_enabled": True 
+                          }]
+    }
+}
+
+def create_endpoint(model_serving_endpoint_name):
+    # get endpoint status
+    url = f"{endpoint_url}/{model_serving_endpoint_name}"
+    r = requests.get(url, headers=headers)
+    if "RESOURCE_DOES_NOT_EXIST" in r.text:  
+        print("Creating this new endpoint: ", f"https://{instance}/serving-endpoints/{model_serving_endpoint_name}/invocations")
+        re = requests.post(endpoint_url, headers=headers, json=my_json)
+   
+    else:
+        new_model_version = (my_json['config'])['served_models'][0]['model_version']
+        print(f"This endpoint existed previously! We are updating it to a new config with a new model version: {new_model_version}")
+        # update config
+        url = f"{endpoint_url}/{model_serving_endpoint_name}"
+        re = requests.put(f"{url}/config", headers=headers, json=my_json['config']) 
+        # wait until new config file in place
+        retry = True
+        total_wait = 0
+        while retry:
+            r = requests.get(url, headers=headers)
+            assert r.status_code == 200, f"Expected an HTTP 200 response when accessing endpoint info, received {r.status_code}"
+            endpoint = json.loads(r.text)
+            if "pending_config" in endpoint.keys():
+                seconds = 10
+                print("New config still pending")
+                if total_wait < 6000:
+                    #if less than 10 mins, keep waiting
+                    print(f"Wait for {seconds} seconds")
+                    print(f"Total waiting time so far: {total_wait} seconds")
+                    time.sleep(seconds)
+                    total_wait += seconds
+                else:
+                    print(f"Stopping,  waited for {total_wait} seconds")
+                    retry = False  
+            else:
+                print("New config in place now!")
+                retry = False
+    assert re.status_code == 200, f"Expected an HTTP 200 response, received {re.status_code}"
+
+create_endpoint(model_serving_endpoint_name)
+
+# COMMAND ----------
+
+# DBTITLE 0,--i18n-5890c1e6-9b36-4284-9ac2-3945c1c19886
+# MAGIC %md
 # MAGIC 
-# MAGIC Define a **wait_for_endpoint()** and **wait_for_model()** function.
+# MAGIC It may take a couple of minutes for the endpoint and model to be ready.
+# MAGIC 
+# MAGIC Define a **wait_for_endpoint()**  function.
 
 # COMMAND ----------
 
 def wait_for_endpoint():
-    import time
+    url =  f"{endpoint_url}/{model_serving_endpoint_name}" 
     while True:
-        url = f"{api_url}/api/2.0/preview/mlflow/endpoints/get-status?registered_model_name={model_name}"
         response = requests.get(url, headers=headers)
         assert response.status_code == 200, f"Expected an HTTP 200 response, received {response.status_code}\n{response.text}"
 
-        status = response.json().get("endpoint_status", {}).get("state", "UNKNOWN")
-        if status == "ENDPOINT_STATE_READY": print(status); print("-"*80); return
-        else: print(f"Endpoint not ready ({status}), waiting 10 seconds"); time.sleep(10) # Wait 10 seconds
+        status = response.json().get("state", {}).get("ready", {})
+       
+        if status == "READY": 
+            print(status, "-"*80)
+            return
+        else: 
+            print(f"Endpoint not ready ({status}), waiting 10 seconds")
+            time.sleep(10) # Wait 10 seconds
 
 # COMMAND ----------
 
-def wait_for_version():
-    import time
-    while True:    
-        url = f"{api_url}/api/2.0/preview/mlflow/endpoints/list-versions?registered_model_name={model_name}"
-        response = requests.get(url, headers=headers)
-        assert response.status_code == 200, f"Expected an HTTP 200 response, received {response.status_code}\n{response.text}"
+wait_for_endpoint()
 
-        state = response.json().get("endpoint_versions")[0].get("state")
-        if state == "VERSION_STATE_READY": print(state); print("-"*80); return
-        else: print(f"Version not ready ({state}), waiting 10 seconds"); time.sleep(10) # Wait 10 seconds
-
+# Give the system just a couple extra seconds to transition
+time.sleep(5)
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="b388aa18-533a-47e0-8a60-0c972c65b421"/>
+# DBTITLE 0,--i18n-b388aa18-533a-47e0-8a60-0c972c65b421
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -385,41 +454,31 @@ def wait_for_version():
 # COMMAND ----------
 
 def score_model(dataset: pd.DataFrame, timeout_sec=300):
-    import time
     start = int(time.time())
     print(f"Scoring {model_name}")
-    
-    url = f"{api_url}/model/{model_name}/1/invocations"
-    ds_dict = dataset.to_dict(orient="split")
-    
+    data_json = {"dataframe_split": dataset.to_dict(orient="split")} 
+    url =  f"https://{instance}/serving-endpoints/{model_serving_endpoint_name}/invocations"
+  
     while True:
-        response = requests.request(method="POST", headers=headers, url=url, json=ds_dict)
+        response = requests.request(method="POST", headers=headers, url=url, json=data_json)
         elapsed = int(time.time()) - start
-        
-        if response.status_code == 200: return response.json()
-        elif elapsed > timeout_sec: raise Exception(f"Endpoint was not ready after {timeout_sec} seconds")
+
+        if response.status_code == 200: 
+            return response.json()
+        elif elapsed > timeout_sec: 
+            raise Exception(f"Endpoint was not ready after {timeout_sec} seconds")
         elif response.status_code == 503: 
-            print("Temporarily unavailable, retr in 5")
+            print("Temporarily unavailable, retry in 5")
             time.sleep(5)
-        else: raise Exception(f"Request failed with status {response.status_code}, {response.text}")
-    
+        else: 
+            raise Exception(f"Request failed with status {response.status_code}, {response.text}")
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="7990376e-fbfb-4413-92d4-76bc6260f9e2"/>
+# DBTITLE 0,--i18n-a2b7fc12-fd0z-493f-be4f-793d0a61695b
+# MAGIC %md
 # MAGIC 
-# MAGIC 
-# MAGIC 
-# MAGIC After the model serving cluster is in the **`ready`** state, you can now send requests to the REST endpoint.
-
-# COMMAND ----------
-
-wait_for_endpoint()
-wait_for_version()
-
-# Give the system just a couple
-# extra seconds to transition
-time.sleep(5)
+# MAGIC Now that the model serving cluster is in the **`ready`** state, you can send requests to the REST endpoint.
 
 # COMMAND ----------
 
@@ -427,7 +486,8 @@ score_model(X_test)
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="10a3d7cc-2659-444b-a75c-eff0298fbb7c"/>
+# DBTITLE 0,--i18n-10a3d7cc-2659-444b-a75c-eff0298fbb7c
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -444,18 +504,28 @@ score_model(X_test)
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="2cfbc2cf-737c-47fa-af47-8a4144e5a9ba"/>
+# DBTITLE 0,--i18n-2cfbc2cf-737c-47fa-af47-8a4144e5a9ba
+# MAGIC %md
 # MAGIC 
 # MAGIC 
+# MAGIC Once your serving endpoint is ready, **`score_model`** should give you the model inference result. 
 # MAGIC 
-# MAGIC <img src="https://files.training.databricks.com/images/icon_warn_24.png"/> **Remember to shut down the Model Serving Cluster to avoid incurring unexpected cost**. It does not terminate automatically! Click on **`Stop`** next to **`Status`** to stop the serving cluster.
-# MAGIC <Br>
+# MAGIC **OPTIONAL**: To visualize the UI for model serving or to manually create a model serving endpoint, click the **Serving** tab on the navbar. 
 # MAGIC 
-# MAGIC <div><img src="http://files.training.databricks.com/images/mlflow/demo_model_hex.png" style="height: 250px; margin: 20px"/></div>
+# MAGIC <img src="https://files.training.databricks.com/images/mlflow/model_serving_screenshot2_1.png" alt="step12" width="1500"/>
+# MAGIC 
+# MAGIC <br>
+# MAGIC <p>Then select the model to enable model serving or to check the status of model serving.</p>
+# MAGIC 
+# MAGIC <img src="https://files.training.databricks.com/images/mlflow/model_serving_screenshot2_2.png" alt="step12" width="1500"/>
+# MAGIC  <br>
+# MAGIC  <p>Use "Query endpoint" to manually input the payload_json and check the inference result.</p>
+# MAGIC <img src="https://files.training.databricks.com/images/mlflow/model_serving_screenshot2_3.png" alt="step12" width="1500"/>
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="866cc57f-6fad-4198-8836-02b814eec32e"/>
+# DBTITLE 0,--i18n-866cc57f-6fad-4198-8836-02b814eec32e
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -463,7 +533,20 @@ score_model(X_test)
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="dcd4faa4-aecc-4c49-858c-e9ef037a8758"/>
+def delete_model_serving_endpoint(model_serving_endpoint_name):
+    url =  f"{endpoint_url}/{model_serving_endpoint_name}" 
+    response = requests.delete(url, headers=headers)
+    if response.status_code != 200:
+        raise Exception(f"Request failed with status {response.status_code}, {response.text}")
+    else:
+        print(model_serving_endpoint_name, "endpoint is deleted!")
+
+delete_model_serving_endpoint(model_serving_endpoint_name)
+
+# COMMAND ----------
+
+# DBTITLE 0,--i18n-dcd4faa4-aecc-4c49-858c-e9ef037a8758
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -508,7 +591,8 @@ score_model(X_test)
 
 # COMMAND ----------
 
-# MAGIC %md-sandbox <i18n value="504bb995-6f89-43cd-8318-fdb3c5eb920c"/>
+# DBTITLE 0,--i18n-504bb995-6f89-43cd-8318-fdb3c5eb920c
+# MAGIC %md-sandbox
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -525,7 +609,8 @@ score_model(X_test)
 
 # COMMAND ----------
 
-# MAGIC %md-sandbox <i18n value="0daf8c28-b9f5-4879-b821-415556648e12"/>
+# DBTITLE 0,--i18n-0daf8c28-b9f5-4879-b821-415556648e12
+# MAGIC %md-sandbox
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -606,7 +691,19 @@ score_model(X_test)
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="a2c7fb12-fd0b-493f-be4f-793d0a61695b"/>
+# DBTITLE 0,--i18n-a2c7fb12-fd0b-493f-be4f-896d0a61695b
+# MAGIC %md
+# MAGIC ## Online feature store real time model serving
+# MAGIC 
+# MAGIC You can also work with <a href="https://docs.databricks.com/machine-learning/feature-store/online-feature-stores.html" target="_blank">online feature stores </a> for real-time serving of feature values. With real-time serving, you publish feature tables to a low-latency database and deploy the model to a REST endpoint. Databricks Feature Store also supports automatic feature lookup. Please refer to the example notebooks below:
+# MAGIC 
+# MAGIC - AWS version (at the end of the page) <a href="https://docs.databricks.com/machine-learning/feature-store/automatic-feature-lookup.html" target="_blank">here</a>   
+# MAGIC - Azure version <a href="https://learn.microsoft.com/en-us/azure/databricks/_extras/notebooks/source/machine-learning/feature-store-online-example-cosmosdb.html" target="_blank">here</a>
+
+# COMMAND ----------
+
+# DBTITLE 0,--i18n-a2c7fb12-fd0b-493f-be4f-793d0a61695b
+# MAGIC %md
 # MAGIC 
 # MAGIC ## Classroom Cleanup
 # MAGIC 
@@ -618,7 +715,8 @@ DA.cleanup()
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="03005f88-5bf3-4876-9446-d00bb1c86793"/>
+# DBTITLE 0,--i18n-03005f88-5bf3-4876-9446-d00bb1c86793
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -634,7 +732,8 @@ DA.cleanup()
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="75a2124d-f7c7-4f5b-9990-90e4d2dcf40e"/>
+# DBTITLE 0,--i18n-75a2124d-f7c7-4f5b-9990-90e4d2dcf40e
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -644,7 +743,8 @@ DA.cleanup()
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="e3aceb7f-9a4e-44cc-83b9-84d363e17df5"/>
+# DBTITLE 0,--i18n-e3aceb7f-9a4e-44cc-83b9-84d363e17df5
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 

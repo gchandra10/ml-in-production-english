@@ -7,7 +7,8 @@
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="8ce98e48-d7f7-430d-ace6-a69a610a1eb6"/>
+# DBTITLE 0,--i18n-8ce98e48-d7f7-430d-ace6-a69a610a1eb6
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -24,7 +25,8 @@
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="39a1bcda-628a-4751-b34c-59c375fffdef"/>
+# DBTITLE 0,--i18n-39a1bcda-628a-4751-b34c-59c375fffdef
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -42,7 +44,8 @@ X_train, X_test, y_train, y_test = train_test_split(df.drop(["price"], axis=1), 
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="103dd475-d82f-4966-9efc-ae45d27125ae"/>
+# DBTITLE 0,--i18n-103dd475-d82f-4966-9efc-ae45d27125ae
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -73,7 +76,8 @@ for p in parameters:
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="5de38ed5-17a5-421c-8ad1-893be59b062f"/>
+# DBTITLE 0,--i18n-5de38ed5-17a5-421c-8ad1-893be59b062f
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -107,7 +111,8 @@ with mlflow.start_run(run_name="RF-Grid-Search") as run:
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="ac401810-3cb2-4f6b-8d41-5a723769fe41"/>
+# DBTITLE 0,--i18n-ac401810-3cb2-4f6b-8d41-5a723769fe41
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -122,7 +127,8 @@ model = mlflow.sklearn.load_model(f"runs:/{run_id}/{model_name}/")
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="0350f335-9b0d-4e5c-a8bd-41865144ff43"/>
+# DBTITLE 0,--i18n-0350f335-9b0d-4e5c-a8bd-41865144ff43
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -130,11 +136,8 @@ model = mlflow.sklearn.load_model(f"runs:/{run_id}/{model_name}/")
 
 # COMMAND ----------
 
-# ANSWER
-
-# COMMAND ----------
-
-# MAGIC %md <i18n value="a2c7fb12-fd0b-493f-be4f-793d0a61695b"/>
+# DBTITLE 0,--i18n-a2c7fb12-fd0b-493f-be4f-793d0a61695b
+# MAGIC %md
 # MAGIC 
 # MAGIC ## Classroom Cleanup
 # MAGIC 
@@ -143,16 +146,6 @@ model = mlflow.sklearn.load_model(f"runs:/{run_id}/{model_name}/")
 # COMMAND ----------
 
 DA.cleanup()
-
-# COMMAND ----------
-
-# MAGIC %md <i18n value="2c011665-8444-441c-b830-e0e74886684f"/>
-# MAGIC 
-# MAGIC 
-# MAGIC 
-# MAGIC ## ![Spark Logo Tiny](https://files.training.databricks.com/images/105/logo_spark_tiny.png) Next Steps
-# MAGIC 
-# MAGIC Start the next lesson, [Advanced Experiment Tracking]($../03-Advanced-Experiment-Tracking).
 
 # COMMAND ----------
 

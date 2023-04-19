@@ -7,7 +7,8 @@
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="83ffb2a6-b450-4c59-91ed-76ab4d972ae2"/>
+# DBTITLE 0,--i18n-83ffb2a6-b450-4c59-91ed-76ab4d972ae2
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -34,7 +35,8 @@ df = (spark
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="4bceb653-c1e7-44c5-acb4-0cce746fbad2"/>
+# DBTITLE 0,--i18n-4bceb653-c1e7-44c5-acb4-0cce746fbad2
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -83,7 +85,8 @@ model_details = mlflow.register_model(model_uri=model_uri, name=model_name)
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="922f29ae-e6a6-4e8a-8793-acbddfb2e22e"/>
+# DBTITLE 0,--i18n-922f29ae-e6a6-4e8a-8793-acbddfb2e22e
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -106,7 +109,8 @@ display(prediction_df)
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="a2c7fb12-fd0b-493f-be4f-793d0a61695b"/>
+# DBTITLE 0,--i18n-a2c7fb12-fd0b-493f-be4f-793d0a61695b
+# MAGIC %md
 # MAGIC 
 # MAGIC ## Classroom Cleanup
 # MAGIC 
@@ -118,7 +122,8 @@ DA.cleanup()
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="ef89080b-4557-4b95-8e0a-1aa6b53e8e8b"/>
+# DBTITLE 0,--i18n-ef89080b-4557-4b95-8e0a-1aa6b53e8e8b
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 

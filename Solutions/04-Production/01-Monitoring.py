@@ -7,7 +7,8 @@
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="11677a04-117e-48ac-82d0-fe478df33360"/>
+# DBTITLE 0,--i18n-11677a04-117e-48ac-82d0-fe478df33360
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -24,7 +25,8 @@
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="438a1fd4-30c3-4362-92e0-df5e77f3060d"/>
+# DBTITLE 0,--i18n-438a1fd4-30c3-4362-92e0-df5e77f3060d
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -58,7 +60,8 @@
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="4b7fc32c-42d4-430b-8312-93e67efdfeb5"/>
+# DBTITLE 0,--i18n-4b7fc32c-42d4-430b-8312-93e67efdfeb5
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -75,7 +78,8 @@
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="eb4e7ab9-9d0c-4d59-9eaa-2db2da05b5a9"/>
+# DBTITLE 0,--i18n-eb4e7ab9-9d0c-4d59-9eaa-2db2da05b5a9
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -121,7 +125,8 @@
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="232b2c47-e056-4adf-8f74-9515e3fc164e"/>
+# DBTITLE 0,--i18n-232b2c47-e056-4adf-8f74-9515e3fc164e
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -240,7 +245,8 @@ def calculate_js_distance(p, q, raw_distribution_1, raw_distribution_2, threshol
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="f3740dad-ea94-4fcc-9577-7ac36398b1ee"/>
+# DBTITLE 0,--i18n-f3740dad-ea94-4fcc-9577-7ac36398b1ee
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -255,7 +261,8 @@ calculate_ks(
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="8d7321cf-8bc9-48ab-be02-6e78ac8276a5"/>
+# DBTITLE 0,--i18n-8d7321cf-8bc9-48ab-be02-6e78ac8276a5
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -270,7 +277,8 @@ calculate_ks(
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="4971d477-a582-46f0-8d3a-a3416d52e118"/>
+# DBTITLE 0,--i18n-4971d477-a582-46f0-8d3a-a3416d52e118
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -285,7 +293,8 @@ calculate_ks(
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="8f4ca19a-53ed-40ea-ad4a-3bb9e0ca7ee8"/>
+# DBTITLE 0,--i18n-8f4ca19a-53ed-40ea-ad4a-3bb9e0ca7ee8
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -293,7 +302,8 @@ calculate_ks(
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="e58287d8-9bf3-43cd-a686-20ec4e497da4"/>
+# DBTITLE 0,--i18n-e58287d8-9bf3-43cd-a686-20ec4e497da4
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -316,7 +326,8 @@ calculate_ks(
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="f68d1cd1-a4da-4400-a52b-92360baf4f42"/>
+# DBTITLE 0,--i18n-f68d1cd1-a4da-4400-a52b-92360baf4f42
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -328,7 +339,8 @@ distance.jensenshannon(p=[1.0, 0.0, 1.0], q=[1.0, 0.0, 1.0], base=2.0)
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="8cae5f7f-adf6-43d6-bfb4-7a50b45dfce0"/>
+# DBTITLE 0,--i18n-8cae5f7f-adf6-43d6-bfb4-7a50b45dfce0
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -345,7 +357,8 @@ calculate_js_distance(p, q, raw_distribution_1, raw_distribution_2, threshold=0.
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="20eb1618-d5ff-4bd7-b772-6d342497326f"/>
+# DBTITLE 0,--i18n-20eb1618-d5ff-4bd7-b772-6d342497326f
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -362,7 +375,8 @@ calculate_js_distance(p, q, raw_distribution_1, raw_distribution_2, threshold=0.
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="4858cfcd-903e-4839-9eba-313a923e1a16"/>
+# DBTITLE 0,--i18n-4858cfcd-903e-4839-9eba-313a923e1a16
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -379,7 +393,8 @@ calculate_js_distance(p, q, raw_distribution_1, raw_distribution_2, threshold=0.
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="db1e429a-8590-4658-b234-13aea4800a81"/>
+# DBTITLE 0,--i18n-db1e429a-8590-4658-b234-13aea4800a81
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -387,7 +402,8 @@ calculate_js_distance(p, q, raw_distribution_1, raw_distribution_2, threshold=0.
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="c76599da-4b09-4e6f-8826-557347429af8"/>
+# DBTITLE 0,--i18n-c76599da-4b09-4e6f-8826-557347429af8
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -411,7 +427,8 @@ pdf2 = airbnb_pdf.drop(pdf1.index)
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="e9d3aad2-2af9-4deb-84a9-a393211eaf2b"/>
+# DBTITLE 0,--i18n-e9d3aad2-2af9-4deb-84a9-a393211eaf2b
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -432,7 +449,8 @@ pdf2["neighbourhood_cleansed"] = pdf2["neighbourhood_cleansed"].map(lambda x: No
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="75862f88-d5f4-4809-9bb6-c12e22755360"/>
+# DBTITLE 0,--i18n-75862f88-d5f4-4809-9bb6-c12e22755360
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -450,7 +468,8 @@ dbutils.data.summarize(pdf2)
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="90a1c03a-c124-43bb-8083-2abf0fd778a9"/>
+# DBTITLE 0,--i18n-90a1c03a-c124-43bb-8083-2abf0fd778a9
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -467,7 +486,8 @@ percent_change.style.background_gradient(cmap=cm, text_color_threshold=0.5, axis
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="2e4a5ada-393f-47cd-a9e6-d2f8cf8e570e"/>
+# DBTITLE 0,--i18n-2e4a5ada-393f-47cd-a9e6-d2f8cf8e570e
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -492,7 +512,8 @@ for num in num_cols:
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="37037a08-09a1-41ad-a876-a919c8895b25"/>
+# DBTITLE 0,--i18n-37037a08-09a1-41ad-a876-a919c8895b25
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -518,7 +539,8 @@ for num in num_cols:
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="19ccfb17-b34c-4a70-b01a-11f1e2661507"/>
+# DBTITLE 0,--i18n-19ccfb17-b34c-4a70-b01a-11f1e2661507
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -535,7 +557,8 @@ pd.concat(
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="4bb159b0-c70f-45ab-a81f-e01ef41d66cd"/>
+# DBTITLE 0,--i18n-4bb159b0-c70f-45ab-a81f-e01ef41d66cd
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -561,7 +584,8 @@ for feature in cat_cols:
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="770b3e78-3388-42be-8559-e7a0c1e345b0"/>
+# DBTITLE 0,--i18n-770b3e78-3388-42be-8559-e7a0c1e345b0
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -569,7 +593,8 @@ for feature in cat_cols:
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="71d4c070-91ff-4314-986a-d9c799ca221f"/>
+# DBTITLE 0,--i18n-71d4c070-91ff-4314-986a-d9c799ca221f
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -589,7 +614,8 @@ for feature in cat_cols:
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="d5a348a1-e123-4560-b1e3-09b29b9d4e28"/>
+# DBTITLE 0,--i18n-d5a348a1-e123-4560-b1e3-09b29b9d4e28
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -716,7 +742,8 @@ drift_monitor.generate_null_counts()
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="7dd9c6a3-8b89-46f4-a041-790fe2895ffc"/>
+# DBTITLE 0,--i18n-7dd9c6a3-8b89-46f4-a041-790fe2895ffc
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -743,7 +770,8 @@ drift_monitor.generate_null_counts()
 
 # COMMAND ----------
 
-# MAGIC %md-sandbox <i18n value="fecb11d3-918a-4449-8c94-1319dc74bc7f"/>
+# DBTITLE 0,--i18n-fecb11d3-918a-4449-8c94-1319dc74bc7f
+# MAGIC %md-sandbox
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -782,7 +810,8 @@ drift_monitor.generate_null_counts()
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="c5f29222-00d9-4b74-8842-aef5264dbdec"/>
+# DBTITLE 0,--i18n-c5f29222-00d9-4b74-8842-aef5264dbdec
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -794,7 +823,8 @@ drift_monitor.generate_null_counts()
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="a2c7fb12-fd0b-493f-be4f-793d0a61695b"/>
+# DBTITLE 0,--i18n-a2c7fb12-fd0b-493f-be4f-793d0a61695b
+# MAGIC %md
 # MAGIC 
 # MAGIC ## Classroom Cleanup
 # MAGIC 
@@ -806,7 +836,8 @@ DA.cleanup()
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="1074438b-a67b-401d-972d-06e70542c967"/>
+# DBTITLE 0,--i18n-1074438b-a67b-401d-972d-06e70542c967
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 

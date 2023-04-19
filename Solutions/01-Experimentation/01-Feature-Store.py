@@ -7,7 +7,8 @@
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="eb86cd87-1efb-41e7-ab51-42e2519a7f7f"/>
+# DBTITLE 0,--i18n-eb86cd87-1efb-41e7-ab51-42e2519a7f7f
+# MAGIC %md
 # MAGIC 
 # MAGIC # Feature Store
 # MAGIC 
@@ -19,7 +20,8 @@
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="cdce9fac-cdce-4ab5-8fa3-2797972d57b6"/>
+# DBTITLE 0,--i18n-cdce9fac-cdce-4ab5-8fa3-2797972d57b6
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -40,7 +42,8 @@
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="7f8a9e4b-a821-46cb-9fcd-fc58572769ce"/>
+# DBTITLE 0,--i18n-7f8a9e4b-a821-46cb-9fcd-fc58572769ce
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -54,7 +57,8 @@
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="a1ba0678-b162-4513-a3af-675a169df7a6"/>
+# DBTITLE 0,--i18n-a1ba0678-b162-4513-a3af-675a169df7a6
+# MAGIC %md
 # MAGIC 
 # MAGIC Let's load in our dataset from <a href="http://insideairbnb.com/get-the-data.html" target="_blank">Inside Airbnb</a> which is stored as a csv file.
 
@@ -67,7 +71,8 @@ display(airbnb_df)
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="3167a48a-b7d4-42cf-9197-1c6cd66c87bf"/>
+# DBTITLE 0,--i18n-3167a48a-b7d4-42cf-9197-1c6cd66c87bf
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -83,7 +88,8 @@ display(airbnb_df)
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="2d9d25d2-df88-44a8-93eb-cfebfd8ca022"/>
+# DBTITLE 0,--i18n-2d9d25d2-df88-44a8-93eb-cfebfd8ca022
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -99,7 +105,8 @@ display(delta_df)
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="7ac1e0ec-785e-48f1-94f0-86b217432e69"/>
+# DBTITLE 0,--i18n-7ac1e0ec-785e-48f1-94f0-86b217432e69
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -114,7 +121,8 @@ display(delta_df)
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="1fe2a536-7fc8-49aa-a7b2-e8322d81a86f"/>
+# DBTITLE 0,--i18n-1fe2a536-7fc8-49aa-a7b2-e8322d81a86f
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -129,7 +137,8 @@ display(delta_df)
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="62f4bb05-4074-49e0-ac00-661940133a35"/>
+# DBTITLE 0,--i18n-62f4bb05-4074-49e0-ac00-661940133a35
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -145,7 +154,8 @@ display(delta_df)
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="33bda953-e688-4729-a476-a3d46a2662a2"/>
+# DBTITLE 0,--i18n-33bda953-e688-4729-a476-a3d46a2662a2
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -164,7 +174,8 @@ display(spark.read
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="82162788-2808-450a-95da-7b1387270814"/>
+# DBTITLE 0,--i18n-82162788-2808-450a-95da-7b1387270814
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -180,7 +191,8 @@ display(spark.read
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="b34fd627-6426-42c7-b0d9-82e46fcd183e"/>
+# DBTITLE 0,--i18n-b34fd627-6426-42c7-b0d9-82e46fcd183e
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -193,7 +205,8 @@ display(spark.read
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="ff976181-9c5e-4a87-8a2f-af9886791192"/>
+# DBTITLE 0,--i18n-ff976181-9c5e-4a87-8a2f-af9886791192
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -205,7 +218,8 @@ display(spark.read
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="bf78552e-18c0-4eda-8dcf-ed76bf38c998"/>
+# DBTITLE 0,--i18n-bf78552e-18c0-4eda-8dcf-ed76bf38c998
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -221,7 +235,8 @@ help(fs.create_table)
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="52d53b6d-b1c0-4f8e-bb0c-72df4ad7b71f"/>
+# DBTITLE 0,--i18n-52d53b6d-b1c0-4f8e-bb0c-72df4ad7b71f
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -252,7 +267,8 @@ fs.create_table(
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="b5d563a7-36e5-4757-a54c-d622b4198ebc"/>
+# DBTITLE 0,--i18n-b5d563a7-36e5-4757-a54c-d622b4198ebc
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -277,7 +293,8 @@ fs.create_table(
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="ff05da34-eb42-49e7-9a0e-8a6a03a37b7a"/>
+# DBTITLE 0,--i18n-ff05da34-eb42-49e7-9a0e-8a6a03a37b7a
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -288,7 +305,8 @@ fs.create_table(
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="de8630f3-d645-42c7-b966-6c2420854d46"/>
+# DBTITLE 0,--i18n-de8630f3-d645-42c7-b966-6c2420854d46
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -302,7 +320,8 @@ fs.create_table(
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="744b350a-8786-4f6d-8997-fa9e967a0c2e"/>
+# DBTITLE 0,--i18n-744b350a-8786-4f6d-8997-fa9e967a0c2e
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -315,7 +334,8 @@ print(f"Feature table data source : {fs.get_table(table_name).path_data_sources}
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="31c92288-4164-46a0-9763-7491e87eda53"/>
+# DBTITLE 0,--i18n-31c92288-4164-46a0-9763-7491e87eda53
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -337,7 +357,8 @@ display(airbnb_df_short_reviews)
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="80156815-35e5-4f33-a4a1-b3c9d9390a39"/>
+# DBTITLE 0,--i18n-80156815-35e5-4f33-a4a1-b3c9d9390a39
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -353,7 +374,8 @@ fs.write_table(name=table_name,
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="61d7f79a-e7a9-4072-a694-587352484c5c"/>
+# DBTITLE 0,--i18n-61d7f79a-e7a9-4072-a694-587352484c5c
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -365,7 +387,8 @@ fs.write_table(name=table_name,
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="35489dba-e6a9-4bd0-913b-966e4613af3d"/>
+# DBTITLE 0,--i18n-35489dba-e6a9-4bd0-913b-966e4613af3d
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -379,7 +402,8 @@ display(feature_df)
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="032776de-34bf-492c-857b-88caf2e3d34a"/>
+# DBTITLE 0,--i18n-032776de-34bf-492c-857b-88caf2e3d34a
+# MAGIC %md
 # MAGIC 
 # MAGIC Now, let's delete the feature table. 
 # MAGIC 
@@ -397,7 +421,8 @@ display(feature_df)
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="ba7fb23d-7ee0-453a-8bdc-fdf9e6c63dc4"/>
+# DBTITLE 0,--i18n-ba7fb23d-7ee0-453a-8bdc-fdf9e6c63dc4
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -409,7 +434,8 @@ display(feature_df)
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="a2c7fb12-fd0b-493f-be4f-793d0a61695b"/>
+# DBTITLE 0,--i18n-a2c7fb12-fd0b-493f-be4f-793d0a61695b
+# MAGIC %md
 # MAGIC 
 # MAGIC ## Classroom Cleanup
 # MAGIC 
@@ -421,7 +447,8 @@ DA.cleanup()
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="b4480d8a-2aed-43dd-b52a-7e0c758afea4"/>
+# DBTITLE 0,--i18n-b4480d8a-2aed-43dd-b52a-7e0c758afea4
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -434,13 +461,11 @@ DA.cleanup()
 # MAGIC 
 # MAGIC **Question:** What challenges does the Feature Store help solve?
 # MAGIC **Answer:** A key issue many ML pipelines struggle with is feature reproducibility and data sharing. The Feature Store lets different users across the same organization utilize the same feature computation code.
-# MAGIC 
-# MAGIC **Question:** What does hashing a dataset help me do?
-# MAGIC **Answer:** It can help confirm whether a dataset is or is not the same as another.  This is helpful in data reproducibility.  It cannot, however, tell you the full diff between two datasets and is not a scalable solution.
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="09538a0b-08b7-4ace-8781-1b6e68bdd789"/>
+# DBTITLE 0,--i18n-09538a0b-08b7-4ace-8781-1b6e68bdd789
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -450,7 +475,8 @@ DA.cleanup()
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="ec52d384-7d1e-4fc3-a1db-50bb85224502"/>
+# DBTITLE 0,--i18n-ec52d384-7d1e-4fc3-a1db-50bb85224502
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 

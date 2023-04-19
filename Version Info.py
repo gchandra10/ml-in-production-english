@@ -7,17 +7,19 @@
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="c83d51d6-428b-4691-82ea-778976cde46b"/>
+# DBTITLE 0,--i18n-c83d51d6-428b-4691-82ea-778976cde46b
+# MAGIC %md
 # MAGIC 
 # MAGIC # Project Information
 # MAGIC 
 # MAGIC * Name: **Machine Learning in Production**
-# MAGIC * Version:  **3.4.5**
-# MAGIC * Built On: **Jan 19, 2023 at 16:50:06 UTC**
+# MAGIC * Version:  **3.5.0**
+# MAGIC * Built On: **Apr 19, 2023 at 21:03:24 UTC**
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="0de6d320-330c-4889-95b5-78d478a65d55"/>
+# DBTITLE 0,--i18n-0de6d320-330c-4889-95b5-78d478a65d55
+# MAGIC %md
 # MAGIC 
 # MAGIC Run the following cell for additional information on this course's datasets, and their copyrights.
 

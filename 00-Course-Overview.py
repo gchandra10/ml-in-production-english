@@ -7,7 +7,8 @@
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="c83d51d6-428b-4691-82ea-778976cde46b"/>
+# DBTITLE 0,--i18n-c83d51d6-428b-4691-82ea-778976cde46b
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -28,17 +29,17 @@
 # MAGIC | 30m    | **ML in Production Overview**    | Introducing the full end-to-end ML lifecycle |
 # MAGIC | 10m  | **Break**                                               ||
 # MAGIC | 20m    | **[Experimentation - Feature Store]($./01-Experimentation)**    | [Manage data with Delta & Databricks Feature Store]($./01-Experimentation/01-Feature-Store) |
-# MAGIC | 40m  | **[Experimentation - Experiment Tracking & Lab]($./01-Experimentation)** | [Track ML experiment with MLflow]($./01-Experimentation/02-Experiment-Tracking) </br> [Experiment Tracking Lab]($./01-Experimentation/Labs/02-Experiment-Tracking-Lab) | 
+# MAGIC | 45m  | **[Experimentation - Experiment Tracking & Lab]($./01-Experimentation)** | [Track ML experiment with MLflow]($./01-Experimentation/02-Experiment-Tracking) </br> [Experiment Tracking Lab]($./01-Experimentation/Labs/02-Experiment-Tracking-Lab) | 
 # MAGIC | 10m  | **Break**                                               ||
-# MAGIC | 30m  | **[Experimentation - Advanced Experiment Tracking & Lab]($./01-Experimentation)** | [Advanced Experiment Tracking]($./01-Experimentation/03-Advanced-Experiment-Tracking) </br> [Advanced Experiment Tracking Lab (Optional)]($./01-Experimentation/Labs/03-Advanced-Experiment-Tracking-Lab) | 
-# MAGIC | 30m    | **[Model Management - MLflow Models & Lab]($./02-Model-Management)**    | [Model management with MLflow]($./02-Model-Management/01-Model-Management) </br> [Model managment lab]($./02-Model-Management/Labs/01-Model-Management-Lab) |
+# MAGIC | 35m    | **[Model Management - MLflow Models & Lab]($./02-Model-Management)**    | [Model management with MLflow]($./02-Model-Management/01-Model-Management) </br> [Model managment lab]($./02-Model-Management/Labs/01-Model-Management-Lab) |
 # MAGIC |  10m | **Break**                                               ||
 # MAGIC | 35m  | **[Model Management - Model Registry]($./02-Model-Management)**       | [Register, version, and deploy models with MLflow]($./02-Model-Management/02-Model-Registry) |
 # MAGIC | 25m  | **[Model Management - Webhooks]($./02-Model-Management)**      | [Create a testing job and a webhook of registered model]($./02-Model-Management/03a-Webhooks-and-Testing) </br> [Automated Testing]($./02-Model-Management/03b-Webhooks-Job-Demo)|
 # MAGIC | 10m  | **Break**                                               ||
 # MAGIC | 60m |**[Deployment Paradigms]($./03-Deployment-Paradigms)** | [Batch]($./03-Deployment-Paradigms/01-Batch)</br> [Real time]($./03-Deployment-Paradigms/02-Real-Time)</br> [Streaming (Reference)]($./Reference/03-Streaming-Deployment)</br> [Labs]($./03-Deployment-Paradigms/Labs)|
 # MAGIC | 10m  | **Break**                                               ||
-# MAGIC | 60m  | **[Production]($./04-Production)**  | [Monitoring]($./04-Production/01-Monitoring)</br> [Monitoring Lab]($./04-Production/Labs/01-Monitoring-Lab)</br>[Alerting (Reference)]($./Reference/02-Alerting)|
+# MAGIC | 75m  | **[Production]($./04-Production)**  | [Monitoring]($./04-Production/01-Monitoring)</br> [Monitoring Lab]($./04-Production/Labs/01-Monitoring-Lab)</br>[Alerting (Reference)]($./Reference/02-Alerting)|
+# MAGIC | 15m  | **Q&A**  | Course wrap up, Q&A, etc. |
 # MAGIC 
 # MAGIC 
 # MAGIC ## Prerequisites
@@ -53,7 +54,8 @@
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="35c71f4c-1ab2-4d02-a07f-c144d7fe7dfa"/>
+# DBTITLE 0,--i18n-35c71f4c-1ab2-4d02-a07f-c144d7fe7dfa
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -67,7 +69,8 @@
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="1464bb0e-c32c-4d92-b8a8-7d2e7767205f"/>
+# DBTITLE 0,--i18n-1464bb0e-c32c-4d92-b8a8-7d2e7767205f
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -88,7 +91,8 @@
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="a2c7fb12-fd0b-493f-be4f-793d0a61695b"/>
+# DBTITLE 0,--i18n-a2c7fb12-fd0b-493f-be4f-793d0a61695b
+# MAGIC %md
 # MAGIC 
 # MAGIC ## Classroom Cleanup
 # MAGIC 

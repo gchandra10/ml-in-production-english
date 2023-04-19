@@ -7,7 +7,8 @@
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="d5223bc2-6b7c-4596-b945-ed2f2cb22d2e"/>
+# DBTITLE 0,--i18n-d5223bc2-6b7c-4596-b945-ed2f2cb22d2e
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -27,7 +28,8 @@
 
 # COMMAND ----------
 
-# MAGIC %md-sandbox <i18n value="c4f47d56-1cc8-4b97-b89f-63257dbb3e31"/>
+# DBTITLE 0,--i18n-c4f47d56-1cc8-4b97-b89f-63257dbb3e31
+# MAGIC %md-sandbox
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -49,7 +51,8 @@
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="ae6da8a8-dcca-4d34-b7fc-f06395f339f0"/>
+# DBTITLE 0,--i18n-ae6da8a8-dcca-4d34-b7fc-f06395f339f0
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -61,7 +64,8 @@
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="c06f6e05-ab27-41da-8466-c092b3fcc1f6"/>
+# DBTITLE 0,--i18n-c06f6e05-ab27-41da-8466-c092b3fcc1f6
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -98,7 +102,8 @@ with mlflow.start_run(run_name="RF Model") as run:
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="ee061209-c472-4fea-9a05-52fc45a80bb4"/>
+# DBTITLE 0,--i18n-ee061209-c472-4fea-9a05-52fc45a80bb4
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -111,7 +116,8 @@ model_name = f"airbnb-rf-model_{suffix}"
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="0650f73b-bf51-4494-8262-c04f470c73bd"/>
+# DBTITLE 0,--i18n-0650f73b-bf51-4494-8262-c04f470c73bd
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -125,7 +131,8 @@ model_details = mlflow.register_model(model_uri=model_uri, name=model_name)
 
 # COMMAND ----------
 
-# MAGIC %md-sandbox <i18n value="99071a6c-e260-40d2-b795-dc9782d3fc2b"/>
+# DBTITLE 0,--i18n-99071a6c-e260-40d2-b795-dc9782d3fc2b
+# MAGIC %md-sandbox
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -139,7 +146,8 @@ model_details = mlflow.register_model(model_uri=model_uri, name=model_name)
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="cd30915c-1fa2-422e-9137-c9c509bed8f4"/>
+# DBTITLE 0,--i18n-cd30915c-1fa2-422e-9137-c9c509bed8f4
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -156,7 +164,8 @@ model_version_details.status
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="2b32a505-bbbd-4c5b-9967-bab1054784c8"/>
+# DBTITLE 0,--i18n-2b32a505-bbbd-4c5b-9967-bab1054784c8
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -171,7 +180,8 @@ client.update_registered_model(
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="89c43607-2402-4a80-97ee-b6b1378d5563"/>
+# DBTITLE 0,--i18n-89c43607-2402-4a80-97ee-b6b1378d5563
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -187,7 +197,8 @@ client.update_model_version(
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="932e4581-9172-4720-833c-210174f8814e"/>
+# DBTITLE 0,--i18n-932e4581-9172-4720-833c-210174f8814e
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -202,7 +213,8 @@ client.update_model_version(
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="64af3f73-388f-42a4-86cc-a3e2e5f713db"/>
+# DBTITLE 0,--i18n-64af3f73-388f-42a4-86cc-a3e2e5f713db
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -224,7 +236,8 @@ client.transition_model_version_stage(
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="d486cd3a-485e-4470-9017-6b03058901da"/>
+# DBTITLE 0,--i18n-d486cd3a-485e-4470-9017-6b03058901da
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -240,7 +253,8 @@ print(f"The current model stage is: '{model_version_details.current_stage}'")
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="2bb842d8-88dd-487a-adfb-3d69aa9aa1a5"/>
+# DBTITLE 0,--i18n-2bb842d8-88dd-487a-adfb-3d69aa9aa1a5
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -259,7 +273,8 @@ model_version_1 = mlflow.pyfunc.load_model(model_version_uri)
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="a7ee0d75-f55c-477a-938b-719ea17c2b8c"/>
+# DBTITLE 0,--i18n-a7ee0d75-f55c-477a-938b-719ea17c2b8c
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -271,7 +286,8 @@ model_version_1.predict(X_test)
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="2cdee524-1465-4bfb-9e62-5ed1307b353e"/>
+# DBTITLE 0,--i18n-2cdee524-1465-4bfb-9e62-5ed1307b353e
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -281,7 +297,8 @@ model_version_1.predict(X_test)
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="d0bda674-ba42-4fa5-9d7c-194e567e1478"/>
+# DBTITLE 0,--i18n-d0bda674-ba42-4fa5-9d7c-194e567e1478
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -318,7 +335,8 @@ with mlflow.start_run(run_name="RF Model") as run:
 
 # COMMAND ----------
 
-# MAGIC %md-sandbox <i18n value="27044c82-1822-4090-96a1-82e266b1ce98"/>
+# DBTITLE 0,--i18n-27044c82-1822-4090-96a1-82e266b1ce98
+# MAGIC %md-sandbox
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -328,7 +346,8 @@ with mlflow.start_run(run_name="RF Model") as run:
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="7d124f10-d8ef-4af6-8e5d-6d0b3d5eecae"/>
+# DBTITLE 0,--i18n-7d124f10-d8ef-4af6-8e5d-6d0b3d5eecae
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -342,7 +361,8 @@ print(f"New model version: {new_model_version}")
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="d10030fe-a13e-4fcb-a13e-056d1bcb8683"/>
+# DBTITLE 0,--i18n-d10030fe-a13e-4fcb-a13e-056d1bcb8683
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -358,7 +378,8 @@ client.update_model_version(
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="039af76f-ed42-4d52-bd96-09f4853322be"/>
+# DBTITLE 0,--i18n-039af76f-ed42-4d52-bd96-09f4853322be
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -376,7 +397,8 @@ client.transition_model_version_stage(
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="bba43d4f-da53-4f09-a324-a1fd6f3f7d74"/>
+# DBTITLE 0,--i18n-bba43d4f-da53-4f09-a324-a1fd6f3f7d74
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -393,7 +415,8 @@ client.transition_model_version_stage(
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="2620b2ab-8fa7-4118-8212-5b9f19af7a8d"/>
+# DBTITLE 0,--i18n-2620b2ab-8fa7-4118-8212-5b9f19af7a8d
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -403,7 +426,8 @@ client.transition_model_version_stage(
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="49c8fbc4-6b5d-4939-a8e7-2b6cc0945909"/>
+# DBTITLE 0,--i18n-49c8fbc4-6b5d-4939-a8e7-2b6cc0945909
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -420,7 +444,8 @@ client.delete_model_version(
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="36e94f58-20c9-4a0e-bc57-3a5c258591a0"/>
+# DBTITLE 0,--i18n-36e94f58-20c9-4a0e-bc57-3a5c258591a0
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -436,7 +461,8 @@ client.transition_model_version_stage(
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="967a313e-45ca-4d7d-b423-3c660e0f6136"/>
+# DBTITLE 0,--i18n-967a313e-45ca-4d7d-b423-3c660e0f6136
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -448,7 +474,8 @@ client.delete_registered_model(model_name)
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="a2c7fb12-fd0b-493f-be4f-793d0a61695b"/>
+# DBTITLE 0,--i18n-a2c7fb12-fd0b-493f-be4f-793d0a61695b
+# MAGIC %md
 # MAGIC 
 # MAGIC ## Classroom Cleanup
 # MAGIC 
@@ -460,7 +487,8 @@ DA.cleanup()
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="cd34a8c0-ed7d-458b-ac28-55664acd3231"/>
+# DBTITLE 0,--i18n-cd34a8c0-ed7d-458b-ac28-55664acd3231
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -476,7 +504,8 @@ DA.cleanup()
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="9aeb78b7-1eba-4bd9-ae48-ab4cd792012f"/>
+# DBTITLE 0,--i18n-9aeb78b7-1eba-4bd9-ae48-ab4cd792012f
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -486,7 +515,8 @@ DA.cleanup()
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="7cae8131-c410-449a-9581-f52899a6c799"/>
+# DBTITLE 0,--i18n-7cae8131-c410-449a-9581-f52899a6c799
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 

@@ -7,7 +7,8 @@
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="8a133a94-0841-46ab-ad14-c85a27948a3c"/>
+# DBTITLE 0,--i18n-8a133a94-0841-46ab-ad14-c85a27948a3c
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -23,7 +24,8 @@
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="1889b8f8-0c82-4057-892b-fe894ba35f18"/>
+# DBTITLE 0,--i18n-1889b8f8-0c82-4057-892b-fe894ba35f18
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -48,26 +50,27 @@
 
 # COMMAND ----------
 
+pip install databricks-registry-webhooks
+
+# COMMAND ----------
+
 # MAGIC %run ../Includes/Classroom-Setup
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="35f9b2a0-9429-4922-b14d-cccceb711222"/>
+# DBTITLE 0,--i18n-35f9b2a0-9429-4922-b14d-cccceb711222
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
 # MAGIC ## Create a Model and Job
 # MAGIC 
 # MAGIC The following steps will create a Databricks job using another notebook in this directory: **`03b-Webhooks-Job-Demo`**
-# MAGIC 
-# MAGIC **Note:** 
-# MAGIC * Ensure that you are an admin on this workspace and that you're not using Community Edition (which has jobs disabled). 
-# MAGIC * If you are not an admin, ask the instructor to share their token with you. 
-# MAGIC * Alternatively, you can set **`token = dbutils.notebook.entry_point.getDbutils().notebook().getContext().apiToken().getOrElse(None)`**.
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="bae3f327-645e-48fb-b920-a87d2a5cda23"/>
+# DBTITLE 0,--i18n-bae3f327-645e-48fb-b920-a87d2a5cda23
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -109,7 +112,8 @@ instance = mlflow.utils.databricks_utils.get_webapp_url()
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="086b4385-9eae-492e-8ccd-52d68a97ad86"/>
+# DBTITLE 0,--i18n-086b4385-9eae-492e-8ccd-52d68a97ad86
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -144,7 +148,8 @@ with mlflow.start_run(run_name="Webhook RF Experiment") as run:
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="8f56343e-2a5f-4515-be64-047b07dcf877"/>
+# DBTITLE 0,--i18n-8f56343e-2a5f-4515-be64-047b07dcf877
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -160,7 +165,8 @@ model_details = mlflow.register_model(model_uri=model_uri, name=name)
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="02c615b7-dbf6-4e4a-8706-6c31cac2be68"/>
+# DBTITLE 0,--i18n-02c615b7-dbf6-4e4a-8706-6c31cac2be68
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -170,7 +176,8 @@ model_details = mlflow.register_model(model_uri=model_uri, name=name)
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="b22313af-97a9-43d8-aaf6-57755b3d45da"/>
+# DBTITLE 0,--i18n-b22313af-97a9-43d8-aaf6-57755b3d45da
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -190,7 +197,7 @@ model_details = mlflow.register_model(model_uri=model_uri, name=name)
 # MAGIC - Select the notebook **`03b-Webhooks-Job-Demo`** 
 # MAGIC - Select the current cluster
 # MAGIC 
-# MAGIC <img src="https://files.training.databricks.com/images/ml-deployment/JobInfo.png" alt="step12" width="750"/>
+# MAGIC <img src="https://files.training.databricks.com/images/mlpupdates/webhook_screenshot.png" alt="step12" width="1200"/>
 # MAGIC 
 # MAGIC <br></br>
 # MAGIC - Copy the Job ID
@@ -199,7 +206,8 @@ model_details = mlflow.register_model(model_uri=model_uri, name=name)
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="66dd2af1-92c3-406c-8fea-4d755700cd73"/>
+# DBTITLE 0,--i18n-66dd2af1-92c3-406c-8fea-4d755700cd73
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -212,27 +220,14 @@ import requests
 def find_job_id(instance, headers, job_name, offset_limit=1000):
     params = {"offset": 0}
     uri = f"{instance}/api/2.1/jobs/list"
-    done = False
-    job_id = None
-    while not done:
-        done = True
-        res = requests.get(uri, params=params, headers=headers)
-        assert res.status_code == 200, f"Job list not returned; {res.content}"
-        
-        jobs = res.json().get("jobs", [])
-        if len(jobs) > 0:
-            for job in jobs:
-                if job.get("settings", {}).get("name", None) == job_name:
-                    job_id = job.get("job_id", None)
-                    break
-
-            # if job_id not found; update the offset and try again
-            if job_id is None:
-                params["offset"] += len(jobs)
-                if params["offset"] < offset_limit:
-                    done = False
+    res = requests.get(uri, params=params, headers=headers)
     
-    return job_id
+    if res.status_code == 200:
+        job_list = res.json().get("jobs", [])
+        if len(job_list) > 0:
+            return job_list[0]["job_id"] ## return the first matching job
+    else:
+        None
 
 def get_job_parameters(job_name, cluster_id, notebook_path):
     params = {
@@ -287,7 +282,8 @@ print(f"Job name: {job_name}")
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="15eeee0f-9472-4b7b-94b9-e728a7c9c38d"/>
+# DBTITLE 0,--i18n-15eeee0f-9472-4b7b-94b9-e728a7c9c38d
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -297,7 +293,8 @@ print(f"Job name: {job_name}")
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="8c0aa70d-ab84-4e31-9ee4-2ab5d9fa6beb"/>
+# DBTITLE 0,--i18n-8c0aa70d-ab84-4e31-9ee4-2ab5d9fa6beb
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -307,33 +304,25 @@ print(f"Job name: {job_name}")
 
 # COMMAND ----------
 
-import json
-from mlflow.utils.rest_utils import http_request
-from mlflow.utils.databricks_utils import get_databricks_host_creds
+from databricks_registry_webhooks import RegistryWebhooksClient, JobSpec 
 
-endpoint = "/api/2.0/mlflow/registry-webhooks/create"
-host_creds = get_databricks_host_creds("databricks")
-
-job_json = {"model_name": name,
-            "events": ["MODEL_VERSION_TRANSITIONED_STAGE"],
-            "description": "Job webhook trigger",
-            "status": "Active",
-            "job_spec": {"job_id": job_id,
-                         "workspace_url": instance,
-                         "access_token": token}
-           }
-
-response = http_request(
-    host_creds=host_creds, 
-    endpoint=endpoint,
-    method="POST",
-    json=job_json
+job_spec = JobSpec(
+    job_id=job_id, 
+    workspace_url=instance,
+    access_token=token 
 )
-assert response.status_code == 200, f"Expected HTTP 200, received {response.status_code}"
+job_webhook = RegistryWebhooksClient().create_webhook(
+    model_name=name, 
+    events=["MODEL_VERSION_TRANSITIONED_STAGE"], 
+    job_spec=job_spec,
+    description="Job webhook trigger",
+    status="ACTIVE" 
+)
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="965cfc78-c346-40d2-a328-d3d769a8c3e2"/>
+# DBTITLE 0,--i18n-965cfc78-c346-40d2-a328-d3d769a8c3e2
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -341,28 +330,23 @@ assert response.status_code == 200, f"Expected HTTP 200, received {response.stat
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="dc8d88f1-f954-4cbf-86cd-4e4c13c198db"/>
+# DBTITLE 0,--i18n-dc8d88f1-f954-4cbf-86cd-4e4c13c198db
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
-# MAGIC To get a list of active Webhooks, use a GET request with the LIST endpoint. Note that this command will return an error if no Webhooks have been created for the Model.
+# MAGIC To get the active Webhook related to our model, use `list_webhooks` and specify the `model_name`.
 
 # COMMAND ----------
 
-endpoint = f"/api/2.0/mlflow/registry-webhooks/list/?model_name={name.replace(' ', '%20')}"
-
-response = http_request(
-    host_creds=host_creds, 
-    endpoint=endpoint,
-    method="GET"
-)
-assert response.status_code == 200, f"Expected HTTP 200, received {response.status_code}"
-
-print(json.dumps(response.json(), indent=4))
+webhooks_list = RegistryWebhooksClient().list_webhooks(model_name=name)
+current_job_webhook_id = job_webhook.id
+print(webhooks_list)
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="70e6903f-0d4e-423d-b4f8-aea6efd28ba5"/>
+# DBTITLE 0,--i18n-70e6903f-0d4e-423d-b4f8-aea6efd28ba5
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -371,69 +355,19 @@ print(json.dumps(response.json(), indent=4))
 # COMMAND ----------
 
 # TODO
-delete_hook = "<insert your webhook id here>"
-
-# COMMAND ----------
-
-new_json = {"id": delete_hook}
-endpoint = f"/api/2.0/mlflow/registry-webhooks/delete"
-
-response = http_request(
-    host_creds=host_creds, 
-    endpoint=endpoint,
-    method="DELETE",
-    json=new_json
+http_webhook = RegistryWebhooksClient().delete_webhook( 
+    id="<insert your webhook id here>"
 )
-assert response.status_code == 200, f"Expected HTTP 200, received {response.status_code}"
-
-print(json.dumps(response.json(), indent=4))
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="c02662e2-e03f-478a-a24a-d0e2961a29ef"/>
-# MAGIC 
-# MAGIC 
-# MAGIC 
-# MAGIC ## Create a HTTP webhook
-# MAGIC 
-# MAGIC This section requires that you have access to a Slack workspace and permissions to create a webhook. This design pattern also works with Teams or other endpoints that accept HTTP requests.
-# MAGIC  
-# MAGIC Set a Slack incoming webhook following <a href="https://api.slack.com/messaging/webhooks" target="_blank">this page</a>. Paste your webhook in the code below and uncomment the code. It should look like **`https://hooks.slack.com...`** Upon the arrival of a new model version with a given name in the model registry, it will send notifications to the slack channel.
-# MAGIC 
-# MAGIC Note that you can find more details on <a href="https://github.com/mlflow/mlflow/blob/master/mlflow/utils/rest_utils.py" target="_blank">the **`mlflow`** REST utility functions here.</a>
+webhooks_list = RegistryWebhooksClient().list_webhooks(model_name=name)
+print(webhooks_list)
 
 # COMMAND ----------
 
-# from mlflow.utils.rest_utils import http_request
-# from mlflow.utils.databricks_utils import get_databricks_host_creds
-# import urllib
-
-# slack_incoming_webhook = "<insert your token here>" 
-
-# endpoint = "/api/2.0/mlflow/registry-webhooks/create"
-# host_creds = get_databricks_host_creds("databricks")
-
-# ## specify http url of the slack notification
-# http_json = {"model_name": name,
-#   "events": ["MODEL_VERSION_TRANSITIONED_STAGE"],
-#   "description": "Job webhook trigger",
-#   "status": "Active",
-#   "http_url_spec": {
-#     "url": slack_incoming_webhook,
-#     "enable_ssl_verification": "false"}}
-
-# response = http_request(
-#   host_creds=host_creds, 
-#   endpoint=endpoint,
-#   method="POST",
-#   json=http_json
-# )
-
-# print(json.dumps(response.json(), indent=4))
-
-# COMMAND ----------
-
-# MAGIC %md <i18n value="a2c7fb12-fd0b-493f-be4f-793d0a61695b"/>
+# DBTITLE 0,--i18n-a2c7fb12-fd0b-493f-be4f-793d0a61695b
+# MAGIC %md
 # MAGIC 
 # MAGIC ## Classroom Cleanup
 # MAGIC 
@@ -445,24 +379,16 @@ DA.cleanup()
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="17f881f6-0404-4348-b6e3-1aa11b383343"/>
-# MAGIC 
-# MAGIC 
-# MAGIC 
-# MAGIC Now that we have registered the webhook, we can **test it by transitioning our model from stage `None` to `Staging` in the Experiment UI.** We should see an incoming message in the associated slack channel. 
-# MAGIC 
-# MAGIC <img src="http://files.training.databricks.com/images/ml-deployment/webhook_slack.png" alt="webhook_notification" width="400"/>
-# MAGIC <br></br>
-
-# COMMAND ----------
-
-# MAGIC %md <i18n value="d9dbc19c-7c1d-4cae-a198-5c6266acf825"/>
+# DBTITLE 0,--i18n-d9dbc19c-7c1d-4cae-a198-5c6266acf825
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
 # MAGIC ## Resources
 # MAGIC 
-# MAGIC - <a href="https://databricks.com/blog/2020/11/19/mlflow-model-registry-on-databricks-simplifies-mlops-with-ci-cd-features.html" target="_blank">See this blog for more details on CI/CD and webhooks</a>
+# MAGIC - See this <a href="https://www.databricks.com/blog/2022/02/01/streamline-mlops-with-mlflow-model-registry-webhooks.html" target="_blank">blog</a> for more details streamlining MLOps with MLflow Model Registry Webhooks
+# MAGIC - Set a Slack incoming webhook following <a href="https://api.slack.com/messaging/webhooks" target="_blank">this page</a>.
+# MAGIC - Search the Databricks documentation for more details on <a href="https://docs.databricks.com/mlflow/model-registry-webhooks.html#examples" target="_blank"> MLflow webhooks</a>
 
 # COMMAND ----------
 

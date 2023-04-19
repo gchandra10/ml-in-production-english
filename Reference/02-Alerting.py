@@ -7,7 +7,8 @@
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="ea8c78d9-43da-4329-b2c9-7a57bd80efdc"/>
+# DBTITLE 0,--i18n-ea8c78d9-43da-4329-b2c9-7a57bd80efdc
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -25,7 +26,8 @@
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="a1b189b9-fb08-49c7-ac41-c89519fa53e1"/>
+# DBTITLE 0,--i18n-a1b189b9-fb08-49c7-ac41-c89519fa53e1
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -43,7 +45,8 @@
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="20349097-0c51-48a6-9f8e-a02876444727"/>
+# DBTITLE 0,--i18n-20349097-0c51-48a6-9f8e-a02876444727
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -53,7 +56,8 @@
 
 # COMMAND ----------
 
-# MAGIC %md-sandbox <i18n value="a1182bdb-ed1d-474e-981c-d73f3b24861d"/>
+# DBTITLE 0,--i18n-a1182bdb-ed1d-474e-981c-d73f3b24861d
+# MAGIC %md-sandbox
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -72,7 +76,8 @@
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="ed606d93-23a4-4e8e-ae6e-2116117bdb5b"/>
+# DBTITLE 0,--i18n-ed606d93-23a4-4e8e-ae6e-2116117bdb5b
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -89,7 +94,8 @@ webhook_ml_production_api_demo = "" # FILL_IN
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="e63a9a68-fed8-475f-a44b-32e19139118e"/>
+# DBTITLE 0,--i18n-e63a9a68-fed8-475f-a44b-32e19139118e
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -117,7 +123,8 @@ post_api_endpoint("This is my post from Python", webhook_ml_production_api_demo)
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="a2c7fb12-fd0b-493f-be4f-793d0a61695b"/>
+# DBTITLE 0,--i18n-a2c7fb12-fd0b-493f-be4f-793d0a61695b
+# MAGIC %md
 # MAGIC 
 # MAGIC ## Classroom Cleanup
 # MAGIC 
@@ -129,7 +136,8 @@ DA.cleanup()
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="ab770d35-14e0-4616-8b3f-7e19a96b74f3"/>
+# DBTITLE 0,--i18n-ab770d35-14e0-4616-8b3f-7e19a96b74f3
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -139,7 +147,8 @@ DA.cleanup()
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="bc62e534-5ae5-4e48-b15b-7c41e3472c38"/>
+# DBTITLE 0,--i18n-bc62e534-5ae5-4e48-b15b-7c41e3472c38
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 

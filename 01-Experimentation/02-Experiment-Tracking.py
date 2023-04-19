@@ -7,7 +7,8 @@
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="0bcc02e5-87e7-4dd9-8973-84babb1f8652"/>
+# DBTITLE 0,--i18n-0bcc02e5-87e7-4dd9-8973-84babb1f8652
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -27,7 +28,8 @@
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="f567a231-9c54-4417-8c26-a2079e38d4a5"/>
+# DBTITLE 0,--i18n-f567a231-9c54-4417-8c26-a2079e38d4a5
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -48,7 +50,8 @@
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="8379bb78-bbb6-48c4-910b-37ce5b17030b"/>
+# DBTITLE 0,--i18n-8379bb78-bbb6-48c4-910b-37ce5b17030b
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -73,7 +76,8 @@
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="4f094143-9696-4f76-8368-e249b0ff22c6"/>
+# DBTITLE 0,--i18n-4f094143-9696-4f76-8368-e249b0ff22c6
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -81,7 +85,8 @@
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="5b6379eb-3ea4-41c3-b320-158c98cb75ef"/>
+# DBTITLE 0,--i18n-5b6379eb-3ea4-41c3-b320-158c98cb75ef
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -89,7 +94,8 @@
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="924c3ca2-26cd-4a67-98f3-3976f61165d6"/>
+# DBTITLE 0,--i18n-924c3ca2-26cd-4a67-98f3-3976f61165d6
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -106,7 +112,8 @@ X_train.head()
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="eaf7bc15-c588-4fd1-bd8e-534c31a2192b"/>
+# DBTITLE 0,--i18n-eaf7bc15-c588-4fd1-bd8e-534c31a2192b
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -116,7 +123,8 @@ X_train.head()
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="18498d46-c500-4939-95c8-f17df6f913ca"/>
+# DBTITLE 0,--i18n-18498d46-c500-4939-95c8-f17df6f913ca
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -154,7 +162,8 @@ with mlflow.start_run(run_name="Basic RF Run") as run:
 
 # COMMAND ----------
 
-# MAGIC %md-sandbox <i18n value="5350e1fc-0670-4e81-b747-524ca465bae7"/>
+# DBTITLE 0,--i18n-5350e1fc-0670-4e81-b747-524ca465bae7
+# MAGIC %md-sandbox
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -168,7 +177,8 @@ with mlflow.start_run(run_name="Basic RF Run") as run:
 
 # COMMAND ----------
 
-# MAGIC %md-sandbox <i18n value="18464172-8be4-4c26-85c7-3d9674253f98"/>
+# DBTITLE 0,--i18n-18464172-8be4-4c26-85c7-3d9674253f98
+# MAGIC %md-sandbox
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -181,13 +191,25 @@ with mlflow.start_run(run_name="Basic RF Run") as run:
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="7c2e26f3-1fb1-4208-bbdd-a9127dd4619c"/>
+# DBTITLE 0,--i18n-7c2e26f3-1fb1-4208-bbdd-a9127dd4619c
+# MAGIC %md
 # MAGIC 
-# MAGIC 
-# MAGIC 
-# MAGIC ### Parameters, Metrics, and Artifacts
+# MAGIC ### Parameters, Metrics, Artifacts, Signature, and Input Examples
 # MAGIC 
 # MAGIC But wait, there's more!  In the last example, you logged the run name, an evaluation metric, and your model itself as an artifact.  Now let's log parameters, multiple metrics, and other artifacts including the feature importances.
+# MAGIC 
+# MAGIC It is a best practice to also log a model signature and input example. This allows for better schema checks and, therefore, integration with automated deployment tools.
+# MAGIC 
+# MAGIC **Signature**
+# MAGIC * A model signature is just the schema of the input(s) and the output(s) of the model
+# MAGIC * We usually get this with the **`infer_schema`** function
+# MAGIC 
+# MAGIC **Input Example**
+# MAGIC * This is simply a few example inputs to the model 
+# MAGIC * This will be converted to JSON and stored in our MLflow run
+# MAGIC * It integrates well with MLflow model serving
+# MAGIC 
+# MAGIC In general, logging a model with these looks like **`.log_model(model, model_name, signature=signature, input_example=input_example)`**.
 # MAGIC 
 # MAGIC First, create a function to perform this.
 # MAGIC 
@@ -197,6 +219,7 @@ with mlflow.start_run(run_name="Basic RF Run") as run:
 
 import matplotlib.pyplot as plt
 from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score
+from mlflow.models.signature import infer_signature
 
 def log_rf(experiment_id, run_name, params, X_train, X_test, y_train, y_test):
   
@@ -205,9 +228,13 @@ def log_rf(experiment_id, run_name, params, X_train, X_test, y_train, y_test):
         rf = RandomForestRegressor(**params)
         rf.fit(X_train, y_train)
         predictions = rf.predict(X_test)
-
+        
+        # Log the model with signature and input example
+        signature = infer_signature(X_train, pd.DataFrame(y_train))
+        input_example = X_train.head(3)
+        
         # Log model
-        mlflow.sklearn.log_model(rf, "random_forest_model")
+        mlflow.sklearn.log_model(rf, "random_forest_model", signature=signature, input_example=input_example)
 
         # Log params
         mlflow.log_params(params)
@@ -236,11 +263,12 @@ def log_rf(experiment_id, run_name, params, X_train, X_test, y_train, y_test):
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="8a40693f-5a0f-4a2f-90ed-660fa0a46ad5"/>
+# DBTITLE 0,--i18n-8a40693f-5a0f-4a2f-90ed-660fa0a46ad5
+# MAGIC %md
 # MAGIC 
+# MAGIC Look at the MLflow UI for this run to see our model signature and input example.
 # MAGIC 
-# MAGIC 
-# MAGIC Run with new parameters.
+# MAGIC Let's now run this with new parameters.
 
 # COMMAND ----------
 
@@ -254,7 +282,8 @@ log_rf(experiment_id, "Second Run", params, X_train, X_test, y_train, y_test)
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="e54b78e2-f3a2-4ce4-ba44-dd466c1e2f6a"/>
+# DBTITLE 0,--i18n-e54b78e2-f3a2-4ce4-ba44-dd466c1e2f6a
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -274,7 +303,8 @@ log_rf(experiment_id, "Third Run", params_1000_trees, X_train, X_test, y_train, 
 
 # COMMAND ----------
 
-# MAGIC %md-sandbox <i18n value="0da95562-a3c3-406c-9142-ea6045b19d6b"/>
+# DBTITLE 0,--i18n-0da95562-a3c3-406c-9142-ea6045b19d6b
+# MAGIC %md-sandbox
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -292,7 +322,8 @@ client = MlflowClient()
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="4e9d2c32-cbe0-4536-8aaa-3ad8611f2b03"/>
+# DBTITLE 0,--i18n-4e9d2c32-cbe0-4536-8aaa-3ad8611f2b03
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -300,11 +331,12 @@ client = MlflowClient()
 
 # COMMAND ----------
 
-display(client.list_run_infos(experiment_id))
+display(client.search_runs(experiment_id))
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="354881c3-880b-4315-a3e7-f2c84bc812a9"/>
+# DBTITLE 0,--i18n-354881c3-880b-4315-a3e7-f2c84bc812a9
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -317,7 +349,8 @@ display(runs)
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="dc942bf8-e27f-45e3-8c28-cef25862046d"/>
+# DBTITLE 0,--i18n-dc942bf8-e27f-45e3-8c28-cef25862046d
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -331,7 +364,8 @@ client.list_artifacts(run_rf.run_id)
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="1c34346a-8431-44da-9eae-ea2acebb6a9b"/>
+# DBTITLE 0,--i18n-1c34346a-8431-44da-9eae-ea2acebb6a9b
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -343,7 +377,8 @@ client.get_run(run_rf.run_id).data.metrics
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="6476766c-5cc4-44c9-91c9-0a2304e50457"/>
+# DBTITLE 0,--i18n-6476766c-5cc4-44c9-91c9-0a2304e50457
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -356,7 +391,40 @@ model.feature_importances_
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="a2c7fb12-fd0b-493f-be4f-793d0a61695b"/>
+# DBTITLE 0,--i18n-TBD
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC 
+# MAGIC ### Autologging
+# MAGIC 
+# MAGIC So far we have explored methods for manually logging models, parameters, metrics, and artifacts to MLflow. 
+# MAGIC 
+# MAGIC However, in some cases it would be convenient to do this automatically. This is where MLflow Autologging comes in. 
+# MAGIC 
+# MAGIC Autologging allows you to **log metrics, parameters, and models without the need for explicit log statements.**
+# MAGIC 
+# MAGIC There are two ways to enable autologging: 
+# MAGIC 
+# MAGIC 1. Call mlflow.autolog() before your training code. This will enable autologging for each supported library you have installed as soon as you import it. <a href="https://www.mlflow.org/docs/latest/tracking.html#automatic-logging" target="_blank">A list of supported libraries can be found here</a>.
+# MAGIC 
+# MAGIC 2. Use library-specific autolog calls for each library you use in your code. For example, enabling mlflow for sklearn specically would use **`mlflow.sklearn.autolog()`**
+# MAGIC 
+# MAGIC Let's try our first example again, this time just with autologging. We'll enable autologging for all libraries. 
+# MAGIC 
+# MAGIC **NOTE:** We do not need to put the code in a **`mlflow.start_run()`** block.
+
+# COMMAND ----------
+
+mlflow.autolog()
+
+rf = RandomForestRegressor(random_state=42)
+rf_model = rf.fit(X_train, y_train)
+
+# COMMAND ----------
+
+# DBTITLE 0,--i18n-a2c7fb12-fd0b-493f-be4f-793d0a61695b
+# MAGIC %md
 # MAGIC 
 # MAGIC ## Classroom Cleanup
 # MAGIC 
@@ -368,7 +436,8 @@ DA.cleanup()
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="6d9be940-9705-4f7a-b453-a29df8a62cad"/>
+# DBTITLE 0,--i18n-6d9be940-9705-4f7a-b453-a29df8a62cad
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -391,7 +460,8 @@ DA.cleanup()
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="b9bcc0d6-110a-456a-a950-a7404782cf7f"/>
+# DBTITLE 0,--i18n-b9bcc0d6-110a-456a-a950-a7404782cf7f
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -401,7 +471,8 @@ DA.cleanup()
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="2fc3311c-4fc1-43ec-a673-b5842f1f05f3"/>
+# DBTITLE 0,--i18n-2fc3311c-4fc1-43ec-a673-b5842f1f05f3
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 

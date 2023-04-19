@@ -7,7 +7,8 @@
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="d4db55e1-8962-4f27-b122-eeedd7089ae7"/>
+# DBTITLE 0,--i18n-d4db55e1-8962-4f27-b122-eeedd7089ae7
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -23,7 +24,8 @@
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="b0833c9c-68a1-4193-9740-2f4e02d299a5"/>
+# DBTITLE 0,--i18n-b0833c9c-68a1-4193-9740-2f4e02d299a5
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -104,7 +106,8 @@ with mlflow.start_run(run_name="parent") as run:
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="ef7fafd4-ac6f-4e20-8ae0-e427e372ce92"/>
+# DBTITLE 0,--i18n-ef7fafd4-ac6f-4e20-8ae0-e427e372ce92
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -170,7 +173,8 @@ with mlflow.start_run(run_name="Hyperopt"):
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="a2c7fb12-fd0b-493f-be4f-793d0a61695b"/>
+# DBTITLE 0,--i18n-a2c7fb12-fd0b-493f-be4f-793d0a61695b
+# MAGIC %md
 # MAGIC 
 # MAGIC ## Classroom Cleanup
 # MAGIC 

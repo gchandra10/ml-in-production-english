@@ -7,7 +7,8 @@
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="b2e4d4a1-8ca9-47ab-96e3-9410efcc06bf"/>
+# DBTITLE 0,--i18n-b2e4d4a1-8ca9-47ab-96e3-9410efcc06bf
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -26,7 +27,8 @@
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="da43d2f6-5942-42f1-8609-bff49f75e731"/>
+# DBTITLE 0,--i18n-da43d2f6-5942-42f1-8609-bff49f75e731
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -36,7 +38,8 @@
 
 # COMMAND ----------
 
-# MAGIC %md-sandbox <i18n value="fa7a0aaf-1961-4ee2-8e27-c14c3273bb5c"/>
+# DBTITLE 0,--i18n-fa7a0aaf-1961-4ee2-8e27-c14c3273bb5c
+# MAGIC %md-sandbox
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -57,7 +60,8 @@
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="6ca36c20-4834-4937-ab13-8341d57072d5"/>
+# DBTITLE 0,--i18n-6ca36c20-4834-4937-ab13-8341d57072d5
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -73,7 +77,8 @@
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="c3fa5caf-f8d9-4c80-a968-ac77890ff350"/>
+# DBTITLE 0,--i18n-c3fa5caf-f8d9-4c80-a968-ac77890ff350
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -87,7 +92,8 @@
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="44a94be8-76e4-412a-93c9-c8952e6452cb"/>
+# DBTITLE 0,--i18n-44a94be8-76e4-412a-93c9-c8952e6452cb
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -102,7 +108,8 @@
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="0fbd6359-a2d1-475b-a3c3-d3499381fdc5"/>
+# DBTITLE 0,--i18n-0fbd6359-a2d1-475b-a3c3-d3499381fdc5
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -122,7 +129,8 @@ X_train["longitude"] = X_train["longitude"].astype(str)
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="6444cf76-3e69-425b-83b8-ab142b369ff1"/>
+# DBTITLE 0,--i18n-6444cf76-3e69-425b-83b8-ab142b369ff1
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -194,7 +202,8 @@ rf_model.fit(X_train_processed, y_train)
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="0cf00c97-cddf-443b-ae8d-6904321f8419"/>
+# DBTITLE 0,--i18n-0cf00c97-cddf-443b-ae8d-6904321f8419
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -231,7 +240,7 @@ class RFWithPreprocess(mlflow.pyfunc.PythonModel):
 
         self.config = json.load(open(config_path))
       
-    def preprocess_input(self, model_input):
+    def preprocess_input(self, model_input: pd.DataFrame) -> pd.DataFrame:
         """
         Return pre-processed model_input
         """
@@ -274,12 +283,13 @@ class RFWithPreprocess(mlflow.pyfunc.PythonModel):
         """
         This is the main entrance to the model in deployment systems
         """
-        processed_model_input = self.preprocess_input(model_input.copy())
+        processed_model_input = self.preprocess_input(model_input)
         return self.rf_model.predict(processed_model_input)
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="da0c0242-f118-45c7-833e-f966a4aaf444"/>
+# DBTITLE 0,--i18n-da0c0242-f118-45c7-833e-f966a4aaf444
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -316,7 +326,8 @@ artifacts = {"config_path": config_path}
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="85fcf330-3682-4b37-857f-62be6e3be8d6"/>
+# DBTITLE 0,--i18n-85fcf330-3682-4b37-857f-62be6e3be8d6
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -334,7 +345,8 @@ model.config
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="16a5af05-d070-4e89-b8ca-0723028a3f10"/>
+# DBTITLE 0,--i18n-16a5af05-d070-4e89-b8ca-0723028a3f10
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -346,7 +358,8 @@ model.fit(X_train, y_train)
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="a19ea1a0-6124-43a1-9e0f-ee6285ac5fa9"/>
+# DBTITLE 0,--i18n-a19ea1a0-6124-43a1-9e0f-ee6285ac5fa9
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -359,7 +372,8 @@ predictions
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="5179a25e-3721-4dfb-8370-24bb64e6c5f5"/>
+# DBTITLE 0,--i18n-5179a25e-3721-4dfb-8370-24bb64e6c5f5
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -374,7 +388,8 @@ signature
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="14a270e5-5546-43fd-a6af-1935a9a17e95"/>
+# DBTITLE 0,--i18n-14a270e5-5546-43fd-a6af-1935a9a17e95
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -401,7 +416,8 @@ conda_env
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="553324ea-2794-4aaa-b579-2b34b82e7903"/>
+# DBTITLE 0,--i18n-553324ea-2794-4aaa-b579-2b34b82e7903
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -421,7 +437,8 @@ with mlflow.start_run() as run:
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="4d9b9658-8fc5-44b2-81f1-ce5702ada9dd"/>
+# DBTITLE 0,--i18n-4d9b9658-8fc5-44b2-81f1-ce5702ada9dd
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -434,7 +451,8 @@ loaded_preprocess_model = mlflow.pyfunc.load_model(mlflow_pyfunc_model_path)
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="f3485479-06db-4403-bc76-94b02a959a6b"/>
+# DBTITLE 0,--i18n-f3485479-06db-4403-bc76-94b02a959a6b
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -446,7 +464,8 @@ loaded_preprocess_model.predict(X_test)
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="aaf95902-f125-4010-a470-8f7685cdab46"/>
+# DBTITLE 0,--i18n-aaf95902-f125-4010-a470-8f7685cdab46
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -454,7 +473,8 @@ loaded_preprocess_model.predict(X_test)
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="a2c7fb12-fd0b-493f-be4f-793d0a61695b"/>
+# DBTITLE 0,--i18n-a2c7fb12-fd0b-493f-be4f-793d0a61695b
+# MAGIC %md
 # MAGIC 
 # MAGIC ## Classroom Cleanup
 # MAGIC 
@@ -466,7 +486,8 @@ DA.cleanup()
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="90861e97-9a02-45e0-9f5c-3ec82f338462"/>
+# DBTITLE 0,--i18n-90861e97-9a02-45e0-9f5c-3ec82f338462
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -482,7 +503,8 @@ DA.cleanup()
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="42441b4e-8552-4b8d-8166-5a4c819184ba"/>
+# DBTITLE 0,--i18n-42441b4e-8552-4b8d-8166-5a4c819184ba
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -492,7 +514,8 @@ DA.cleanup()
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="0e65e9fe-f6a7-47f4-b0c3-693459867164"/>
+# DBTITLE 0,--i18n-0e65e9fe-f6a7-47f4-b0c3-693459867164
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 

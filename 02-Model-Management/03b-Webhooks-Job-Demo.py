@@ -11,7 +11,8 @@
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="da6eb3d9-8d66-4bd3-aa77-0eb4bcc5e5e5"/>
+# DBTITLE 0,--i18n-da6eb3d9-8d66-4bd3-aa77-0eb4bcc5e5e5
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -30,7 +31,8 @@ print(model_name)
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="3ff7d618-4a2c-46b4-88f4-4a145075f6eb"/>
+# DBTITLE 0,--i18n-3ff7d618-4a2c-46b4-88f4-4a145075f6eb
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -46,7 +48,8 @@ version
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="f12c134f-9381-464b-9649-c31496f207c2"/>
+# DBTITLE 0,--i18n-f12c134f-9381-464b-9649-c31496f207c2
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -60,7 +63,8 @@ pyfunc_model = mlflow.pyfunc.load_model(model_uri=f"models:/{model_name}/{versio
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="bc0f099e-5dba-45a1-bed6-73ca44316cf3"/>
+# DBTITLE 0,--i18n-bc0f099e-5dba-45a1-bed6-73ca44316cf3
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -73,7 +77,8 @@ output_schema = pyfunc_model.metadata.get_output_schema().as_spark_schema()
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="225097e4-01a8-4f30-a08a-14949d7ef152"/>
+# DBTITLE 0,--i18n-225097e4-01a8-4f30-a08a-14949d7ef152
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -115,7 +120,8 @@ assert expected_output_schema.fields.sort(key=lambda x: x.name) == output_schema
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="69bdc2fe-8c27-44b2-b563-e5dc977a97f8"/>
+# DBTITLE 0,--i18n-69bdc2fe-8c27-44b2-b563-e5dc977a97f8
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -132,7 +138,8 @@ predictions
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="d5a0a864-f28d-42d6-8221-353c8085df59"/>
+# DBTITLE 0,--i18n-d5a0a864-f28d-42d6-8221-353c8085df59
+# MAGIC %md
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -144,18 +151,6 @@ import numpy as np
 
 assert type(predictions) == np.ndarray
 assert type(predictions[0]) == np.float64
-
-# COMMAND ----------
-
-# MAGIC %md <i18n value="a2c7fb12-fd0b-493f-be4f-793d0a61695b"/>
-# MAGIC 
-# MAGIC ## Classroom Cleanup
-# MAGIC 
-# MAGIC Run the following cell to remove lessons-specific assets created during this lesson:
-
-# COMMAND ----------
-
-DA.cleanup()
 
 # COMMAND ----------
 
